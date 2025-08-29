@@ -1,0 +1,104 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* 🎨 3D gradient background with overlay image */
+  background: linear-gradient(135deg, #667eea, #764ba2, #ff6a00, #ee0979);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1600&q=80")
+    no-repeat center/cover;
+  opacity: 0.25; /* dimmed background image */
+  z-index: -1;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.25);
+}
+
+h1 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #4b0082;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ✅ Form spacing */
+form {
+  display: flex;
+  gap: 12px; /* spacing between input & button */
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #764ba2;
+  box-shadow: 0 0 6px rgba(118,75,162,0.6);
+}
+
+button {
+  padding: 12px 18px;
+  font-size: 16px;
+  background: linear-gradient(90deg, #764ba2, #667eea);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.weather-card {
+  margin-top: 25px;
+  padding: 15px;
+  background: #f3e8ff;
+  border-radius: 12px;
+  text-align: left;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+.weather-card h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
